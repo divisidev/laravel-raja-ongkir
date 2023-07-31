@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckOngkirController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('provinces', [CheckOngkirController::class, 'province'])->name('provinces');
+Route::get('cities', [CheckOngkirController::class, 'city'])->name('cities');
+Route::post('check-ongkir', [CheckOngkirController::class, 'checkOngkir'])->name('check-ongkir');
